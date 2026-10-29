@@ -476,3 +476,13 @@ aac1fc62c01ce0c85afd820c1573c64e811b6aa509ed5f4c66b99c8ae853efff
 ```
 
 源码哈希用于确定验证的是哪一份代码，不代表生成的可执行文件也具有同一哈希。Git 若把文本保存为 LF，字节哈希会随换行变化，此时可用上述 LF 归一化标识比较。两张截图展示的源码标识与这里一致；历史版本已在第 10 节另行标明。
+
+## 12. 参考资料与辅助工具用途
+
+1. ICS-26Fall-FDU，[Lab2: BombLab 实验说明](https://ics-26fall-fdu.github.io/labs/lab2-bomb-lab/)。用于核对实验目标、通解要求、Honor、报告内容和提交流程。
+2. ICS-26Fall-FDU，[BombLab 官方模板仓库及 README](https://github.com/ICS-26Fall-FDU/BombLab)。用于核对求解接口、允许修改的范围、编译方式、公开测试和 `final` 标签提交要求。
+3. 本仓库的个人 `bomb`、`defuser.h`、`defuser_main.c`、`challenge.c`、`Makefile`、`public_test.py` 和 `runner.py`。个人 `bomb` 是逆向分析对象；其余文件用于核对接口、challenge/context 来源、编译选项、输出格式及测试限制。
+4. GNU，[GDB 官方文档](https://sourceware.org/gdb/current/onlinedocs/gdb.html/)。对应报告中断点、寄存器、调用参数和内存检查等调试操作。此文档链接在本次报告完善时补充，供复核命令功能。
+5. GNU，[Binutils `objdump` 官方文档](https://sourceware.org/binutils/docs/binutils/objdump.html)。对应报告中的反汇编、函数定位和指令核对操作。此文档链接在本次报告完善时补充，供复核命令功能。
+
+辅助工具及用途：`objdump` 用于静态反汇编；GDB 用于动态调试和检查运行时数据；GCC 用于按官方 Makefile 编译；Python 用于测试与结果核对；WSL 提供 Linux 运行环境。扩展验证使用的自制指令解释器、Z3 及其结论适用范围见第 10 节。Codex 用于辅助分析与核对汇编、数据表，排查问题，设计验证，以及生成或修改部分报告文字和运行结果展示内容。截图展示页仅呈现捕获的程序输出，不参与求解或课程评分。
